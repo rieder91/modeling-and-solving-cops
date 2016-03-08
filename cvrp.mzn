@@ -8,7 +8,10 @@ int: ndepots;
 int: vehicle_capacity;
 array[1..ndepots] of int: capacities;
 array[1..ndepots] of int: opening_cost;
-int: nvehicles = ncustomers;
+
+% pretty sure ndepots is correct and not ncustomers
+int: nvehicles = ndepots;
+
 int: edges = ncustomers+ndepots;
 int: route_cost;    
 array[1..ncustomers] of int: demands;
