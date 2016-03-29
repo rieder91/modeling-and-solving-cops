@@ -1,6 +1,4 @@
 include "count_eq.mzn";
-include "nvalue.mzn";
-include "member.mzn";
 include "decreasing.mzn";
 
 % these come from the data file
@@ -43,6 +41,11 @@ array[iDepots, iEdges] of var 0..1: depot_customer;
 
 
 % constraints
+% disallow edges between depots
+constraint
+  forall(k in iVehicles,i in iDepots, j in iDepots)(
+    edge_taken[i, j, k] = 0
+);
 
 % every customers is visited by exactly one vehicle
 constraint
@@ -50,18 +53,28 @@ constraint
     sum(k in iVehicles, i in iEdges)(edge_taken[i, j, k]) == 1
 );
 
-
-% each vehicle only visits as many customers as it can service with its capacity
+% additional constraint for symmetry
 constraint
-  forall(k in iVehicles)(
-    sum(j in iCustomers, i in iEdges)(demands[j] * edge_taken[i, j, k]) <= vehicle_capacity
+ forall(j in iCustomers)(
+    sum(k in iVehicles, i in iEdges)(edge_taken[j, i, k]) == 1
 );
 
+% this ensures that we start and end at the same depot
+constraint
+  forall(k in iVehicles)(
+    sum(i in iCustomers, j in iDepots)(edge_taken[i, j, k]) <= 1
+);
 
 % the demands of the customers assigned to a depot don't exceed its capacity
 constraint
   forall(i in iDepots)(
     sum(j in iCustomers)(demands[j] * depot_customer[i, j]) <= depot_open[i] * capacities[i - ncustomers]
+);
+
+% each vehicle only visits as many customers as it can service with its capacity
+constraint
+  forall(k in iVehicles)(
+    sum(j in iCustomers, i in iEdges)(demands[j] * edge_taken[i, j, k]) <= vehicle_capacity
 );
 
 
@@ -71,13 +84,15 @@ constraint
     sum(j in iEdges)(edge_taken[i, j, k]) - sum(j in iEdges)(edge_taken[j, i, k]) == 0
 );
 
-
-% this ensures that we start and end at the same depot
+% subtour elimination (Miller, Tucker Zemlin)
+array[iVehicles, iEdges] of var 0..vehicle_capacity: subtour_helper;
 constraint
-  forall(k in iVehicles)(
-    sum(i in iCustomers, j in iDepots)(edge_taken[i, j, k]) <= 1
+    forall(i in iEdges, j in iCustomers, k in iVehicles)(
+        subtour_helper[k, i] - subtour_helper[k, j] + vehicle_capacity * edge_taken[i, j, k] <= vehicle_capacity - demands[j]
+    )
+    /\ forall(i in iCustomers, k in iVehicles)(
+        demands[i] <= subtour_helper[k, i]
 );
-
 
 % ensures that a vehicles only drives to the customers that are assigned to the depot
 %
@@ -91,34 +106,6 @@ constraint
     sum(u in iCustomers)(edge_taken[i, u, k]) + sum(u in iEdges where u != j)(edge_taken[u, j, k]) <= 1 + depot_customer[i, j]
 );
 
-
-% subtour elimination (Miller, Tucker Zemlin)
-array[iVehicles, iEdges] of var 0..vehicle_capacity: subtour_helper;
-constraint
-    forall(i in iEdges, j in iCustomers, k in iVehicles)(
-        subtour_helper[k, i] - subtour_helper[k, j] + vehicle_capacity * edge_taken[i, j, k] <= vehicle_capacity - demands[j]
-    )
-    /\ forall(i in iCustomers, k in iVehicles)(
-        demands[i] <= subtour_helper[k, i]
-);
-
-% disallow edges between depots
-constraint
-  forall(k in iVehicles)(
-    sum(i in iDepots, j in iDepots)(edge_taken[i, j, k]) = 0
-);
-
-
-
-
-% symmetry breaking
-array[iVehicles] of var 0..vehicle_capacity: highest_idx_served;
-constraint
-  forall(k in iVehicles)(
-    highest_idx_served[k] == max([i | i in iEdges, j in iEdges where edge_taken[i, j, k] == 1])
-);
-
-constraint decreasing(highest_idx_served);
 
 
 
@@ -141,5 +128,5 @@ output ["Cost: " ++ show(cost) ++ "\n"]
   ++ ["Total demand: " ++ show(sum(demands)) ++ "\n"]
   ++ ["Opening costs: " ++ show(sum(i in iDepots)(depot_open[i] * opening_cost[i - ncustomers])) ++ "\n"]
   ++ ["Vehicle costs: " ++ show(cost - sum(i in iDepots)(depot_open[i] * opening_cost[i - ncustomers])) ++ "\n"]
- 
-
+%  ++ [ show( v) ++ ":" ++ show(i) ++ "->" ++ show(j)++ ": "++show(edge_taken[i,j,v]) ++"\n" | v in iVehicles, i,j in iEdges]
+  %  ++ [ show(v) ++ ":" ++ show(i) ++ "->" ++ show(j)++ ": "++show(cost[i,j])++" "++show(edge_taken[i,j,v]) ++"\n" | v in iVehicles, i,j in iEdges]

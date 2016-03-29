@@ -33,3 +33,13 @@ call mzn-gecode clrp_v1_int.mzn custom\t3.dzn --fzn-flags "-time 900000" -a -s -
 call mzn-gecode clrp_v1_int.mzn prodhon\coord20-5-1.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "clrp_v1_int_coord20-5-1.result"
 call mzn-gecode clrp_v1_int.mzn prodhon\coord20-5-2.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "clrp_v1_int_coord20-5-2.result"
 call mzn-gecode clrp_v1_int.mzn prodhon\coord50-5-3.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "clrp_v1_int_coord50-5-3.result"
+
+
+call mzn-gecode clrp_final.mzn custom\t1.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "clrp_final_t1.result"
+call mzn-gecode clrp_final.mzn custom\t2.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "clrp_final_t2.result"
+call mzn-gecode clrp_final.mzn custom\t3.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "clrp_final_t3.result"
+
+call mzn-gecode clrp_final.mzn prodhon\coord20-5-1.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "clrp_final_coord20-5-1.result"
+call mzn-gecode clrp_final.mzn prodhon\coord20-5-2.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "clrp_final_coord20-5-2.result"
+call mzn-gecode clrp_final.mzn prodhon\coord50-5-3.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "clrp_final_coord50-5-3.result"
+
