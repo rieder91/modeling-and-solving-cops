@@ -1,0 +1,151 @@
+Cost: 161
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 23
+Vehicle costs: 138
+----------
+Cost: 145
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 23
+Vehicle costs: 122
+----------
+Cost: 143
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 23
+Vehicle costs: 120
+----------
+Cost: 140
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 23
+Vehicle costs: 117
+----------
+Cost: 136
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 23
+Vehicle costs: 113
+----------
+Cost: 127
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 23
+Vehicle costs: 104
+----------
+Cost: 123
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 23
+Vehicle costs: 100
+----------
+Cost: 120
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 23
+Vehicle costs: 97
+----------
+Cost: 118
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 23
+Vehicle costs: 95
+----------
+Cost: 116
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 23
+Vehicle costs: 93
+----------
+Cost: 109
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 23
+Vehicle costs: 86
+----------
+Cost: 103
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 9
+Vehicle costs: 94
+----------
+Cost: 98
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 9
+Vehicle costs: 89
+----------
+Cost: 97
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 9
+Vehicle costs: 88
+----------
+Cost: 95
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 9
+Vehicle costs: 86
+----------
+Cost: 93
+Number of open depots: 4
+Available capacity: 100
+Total demand: 56
+Opening costs: 24
+Vehicle costs: 69
+----------
+Cost: 92
+Number of open depots: 4
+Available capacity: 100
+Total demand: 56
+Opening costs: 19
+Vehicle costs: 73
+----------
+Cost: 88
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 19
+Vehicle costs: 69
+----------
+Cost: 83
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 14
+Vehicle costs: 69
+----------
+Cost: 79
+Number of open depots: 3
+Available capacity: 75
+Total demand: 56
+Opening costs: 14
+Vehicle costs: 65
+----------
+==========
+%%  runtime:       3.180 (3180.000 ms)
+%%  solvetime:     3.173 (3173.000 ms)
+%%  solutions:     20
+%%  variables:     581
+%%  propagators:   426
+%%  propagations:  11462
+%%  nodes:         167
+%%  failures:      81
+%%  restarts:      0
+%%  peak depth:    44
