@@ -1,0 +1,123 @@
+Cost: 108
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 90
+----------
+Cost: 105
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 87
+----------
+Cost: 101
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 83
+----------
+Cost: 100
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 82
+----------
+Cost: 99
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 81
+----------
+Cost: 96
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 78
+----------
+Cost: 93
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 75
+----------
+Cost: 91
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 73
+----------
+Cost: 87
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 69
+----------
+Cost: 85
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 67
+----------
+Cost: 84
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 66
+----------
+Cost: 81
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 18
+Vehicle costs: 63
+----------
+Cost: 80
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 20
+Vehicle costs: 60
+----------
+Cost: 76
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 20
+Vehicle costs: 56
+----------
+Cost: 74
+Number of open depots: 3
+Available capacity: 75
+Total demand: 40
+Opening costs: 23
+Vehicle costs: 51
+----------
+Cost: 73
+Number of open depots: 2
+Available capacity: 50
+Total demand: 40
+Opening costs: 8
+Vehicle costs: 65
+----------
+==========
+%%  runtime:       0.255 (255.000 ms)
+%%  solvetime:     0.244 (244.000 ms)
+%%  solutions:     16
+%%  variables:     1162
+%%  propagators:   1123
+%%  propagations:  19946
+%%  nodes:         161
+%%  failures:      78
+%%  restarts:      0
+%%  peak depth:    30

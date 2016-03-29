@@ -1,0 +1,67 @@
+Cost: 126
+Number of open depots: 4
+Available capacity: 95
+Total demand: 56
+Opening costs: 29
+Vehicle costs: 97
+----------
+Cost: 113
+Number of open depots: 4
+Available capacity: 95
+Total demand: 56
+Opening costs: 29
+Vehicle costs: 84
+----------
+Cost: 103
+Number of open depots: 4
+Available capacity: 95
+Total demand: 56
+Opening costs: 31
+Vehicle costs: 72
+----------
+Cost: 96
+Number of open depots: 4
+Available capacity: 95
+Total demand: 56
+Opening costs: 29
+Vehicle costs: 67
+----------
+Cost: 91
+Number of open depots: 3
+Available capacity: 80
+Total demand: 56
+Opening costs: 26
+Vehicle costs: 65
+----------
+Cost: 87
+Number of open depots: 3
+Available capacity: 80
+Total demand: 56
+Opening costs: 26
+Vehicle costs: 61
+----------
+Cost: 83
+Number of open depots: 3
+Available capacity: 80
+Total demand: 56
+Opening costs: 26
+Vehicle costs: 57
+----------
+Cost: 82
+Number of open depots: 3
+Available capacity: 80
+Total demand: 56
+Opening costs: 21
+Vehicle costs: 61
+----------
+==========
+%%  runtime:       3:01.723 (181723.000 ms)
+%%  solvetime:     3:01.715 (181715.000 ms)
+%%  solutions:     8
+%%  variables:     581
+%%  propagators:   421
+%%  propagations:  10252788
+%%  nodes:         157206
+%%  failures:      78586
+%%  restarts:      0
+%%  peak depth:    79
