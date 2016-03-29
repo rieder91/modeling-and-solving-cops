@@ -1,5 +1,3 @@
-%Idea of this test: more or less realistic values
-%Tweaked route costs so more depods will be opened, also reduced capacities
 ncustomers = 5;
 ndepots = 5;
 vehicle_capacity = 20;

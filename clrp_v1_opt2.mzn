@@ -1,6 +1,3 @@
-include "count_eq.mzn";
-include "nvalue.mzn";
-include "member.mzn";
 include "decreasing.mzn";
 
 % these come from the data file

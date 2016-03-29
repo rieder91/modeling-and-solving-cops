@@ -1,4 +1,3 @@
-include "count_eq.mzn";
 include "decreasing.mzn";
 
 % these come from the data file
