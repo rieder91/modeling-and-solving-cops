@@ -103,6 +103,13 @@ constraint
 );
 
 
+% disallow edges between depots
+constraint
+  forall(k in iVehicles)(
+    sum(i in iDepots, j in iDepots)(edge_taken[i, j, k]) = 0
+);
+
+
 % the cost is the sum of:
 %  * the cost of opening a depot
 %  * the cost of a vehicle driving an edge
@@ -121,5 +128,5 @@ output ["Cost: " ++ show(cost) ++ "\n"]
   ++ ["Total demand: " ++ show(sum(demands)) ++ "\n"]
   ++ ["Opening costs: " ++ show(sum(i in iDepots)(depot_open[i] * opening_cost[i - ncustomers])) ++ "\n"]
   ++ ["Vehicle costs: " ++ show(cost - sum(i in iDepots)(depot_open[i] * opening_cost[i - ncustomers])) ++ "\n"]
- 
-
+%  ++ [ show( v) ++ ":" ++ show(i) ++ "->" ++ show(j)++ ": "++show(edge_taken[i,j,v]) ++"\n" | v in iVehicles, i,j in iEdges]
+  %  ++ [ show(v) ++ ":" ++ show(i) ++ "->" ++ show(j)++ ": "++show(cost[i,j])++" "++show(edge_taken[i,j,v]) ++"\n" | v in iVehicles, i,j in iEdges]

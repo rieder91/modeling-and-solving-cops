@@ -102,23 +102,12 @@ constraint
         demands[i] <= subtour_helper[k, i]
 );
 
+
 % disallow edges between depots
 constraint
   forall(k in iVehicles)(
     sum(i in iDepots, j in iDepots)(edge_taken[i, j, k]) = 0
 );
-
-
-
-
-% symmetry breaking
-array[iVehicles] of var 0..vehicle_capacity: load;
-constraint
-  forall(k in iVehicles)(
-    load[k] = sum(i in iCustomers, j in iEdges)(edge_taken[i, j, k])
-);
-constraint decreasing(load);
-
 
 
 % the cost is the sum of:
@@ -129,7 +118,14 @@ var int: cost = sum(i in iDepots)(opening_cost[i - ncustomers] * depot_open[i]) 
                 sum(i in iEdges, j in iEdges, k in iVehicles)(edge_taken[i, j, k] * distances[i, j]) +
                 sum(i in iCustomers, j in iDepots, k in iVehicles)(edge_taken[i, j, k] * route_cost);
 
-solve minimize cost;
+
+solve
+  :: int_search([depot_customer[i, j] | i in iDepots, j in iCustomers], input_order, indomain_min, complete)
+minimize cost;
+
+
+%solve minimize cost;
+
 
 
 

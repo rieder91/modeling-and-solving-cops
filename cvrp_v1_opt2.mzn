@@ -102,6 +102,12 @@ constraint
         demands[i] <= subtour_helper[k, i]
 );
 
+% disallow edges between depots
+constraint
+  forall(k in iVehicles)(
+    sum(i in iDepots, j in iDepots)(edge_taken[i, j, k]) = 0
+);
+
 
 
 

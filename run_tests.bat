@@ -23,3 +23,7 @@ call mzn-gecode cvrp_v1_opt2.mzn custom\t3.dzn --fzn-flags "-time 900000" -a -s 
 call mzn-gecode cvrp_v1_opt2.mzn prodhon\coord20-5-1.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "cvrp_v1_opt2_coord20-5-1.result"
 call mzn-gecode cvrp_v1_opt2.mzn prodhon\coord20-5-2.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "cvrp_v1_opt2_coord20-5-2.result"
 call mzn-gecode cvrp_v1_opt2.mzn prodhon\coord50-5-3.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "cvrp_v1_opt2_coord50-5-3.result"
+
+call mzn-gecode cvrp_v1_int.mzn prodhon\coord20-5-1.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "cvrp_v1_int_coord20-5-1.result"
+call mzn-gecode cvrp_v1_int.mzn prodhon\coord20-5-2.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "cvrp_v1_int_coord20-5-2.result"
+call mzn-gecode cvrp_v1_int.mzn prodhon\coord50-5-3.dzn --fzn-flags "-time 900000" -a -s -p 8 -o "cvrp_v1_int_coord50-5-3.result"
